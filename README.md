@@ -24,7 +24,7 @@ To get started with the project, follow these steps:
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/graphql-api-bookstore.git
+git clone https://github.com/BaseMax/BookstoreGraphQLTS
 ```
 
 Install dependencies:
@@ -34,12 +34,12 @@ npm install
 ```
 
 Start the PostgreSQL and Redis servers using Docker:
-```code
+```bash
 docker-compose up -d
 ```
 
 Start the server:
-```arduino
+```bash
 npm run start
 ```
 
@@ -62,7 +62,7 @@ The API should have the following queries and mutations.
 ### Queries:
 
 - books: returns a list of all books. This query should be cached in Redis for at least a day.
-```bash
+```graphql
 query {
   books {
     id
@@ -75,7 +75,7 @@ query {
 ```
 
 - book: returns a book by its ID.
-```bash
+```graphql
 query($id: ID!) {
   book(id: $id) {
     id
@@ -88,7 +88,7 @@ query($id: ID!) {
 ```
 
 - users: returns a list of all users.
-```bash
+```graphql
 query {
   users {
     id
@@ -100,7 +100,7 @@ query {
 ```
 
 - user: returns a user by their ID.
-```bash
+```graphql
 query($id: ID!) {
   user(id: $id) {
     id
@@ -112,7 +112,7 @@ query($id: ID!) {
 ```
 
 - genres: returns a list of all genres. This query should be cached in Redis for 1 week.
-```bash
+```graphql
 query {
   genres {
     id
@@ -124,7 +124,7 @@ query {
 ### Mutations
 
 - createBook: creates a new book.
-```css
+```graphql
 mutation($input: BookInput!) {
   createBook(input: $input) {
     id
@@ -138,7 +138,7 @@ mutation($input: BookInput!) {
 
 - updateBook: updates a book by its ID.
 
-```python
+```graphql
 mutation($id: ID!, $input: BookInput!) {
   updateBook(id: $id, input: $input) {
     id
@@ -152,7 +152,7 @@ mutation($id: ID!, $input: BookInput!) {
 
 - deleteBook: deletes a book by its ID.
 
-```bash
+```graphql
 mutation($id: ID!) {
   deleteBook(id: $id) {
     id
@@ -166,7 +166,7 @@ mutation($id: ID!) {
 
 - purchaseBook: adds a book to a user's list of purchased books.
 
-```php
+```graphql
 mutation($userId: ID!, $bookId: ID!) {
   purchaseBook(userId: $userId, bookId: $bookId) {
     id
@@ -191,7 +191,7 @@ mutation($input: UserInput!) {
 
 - updateUser: updates a user by their ID.
 
-```bash
+```graphql
 mutation($id: ID!, $input: UserInput!) {
   updateUser(id: $id, input: $input) {
     id
@@ -204,7 +204,7 @@ mutation($id: ID!, $input: UserInput!) {
 
 - deleteUser: deletes a user by their ID.
 
-```bash
+```graphql
 mutation($id: ID!) {
   deleteUser(id: $id) {
     id
