@@ -178,7 +178,7 @@ mutation($userId: ID!, $bookId: ID!) {
 ```
 
 - createUser: creates a new user.
-```css
+```graphql
 mutation($input: UserInput!) {
   createUser(input: $input) {
     id
