@@ -229,4 +229,8 @@ Docker should be used to automatically install PostgreSQL and the GraphQL tools.
 
 Note: This is just an example assignment and you can customize it based on your specific requirements and needs.
 
+## Contributions
+
+Contributions are welcome! If you find a bug or would like to suggest a new feature, please open an issue or a pull request.
+
 Copyright 2023, Max Base
