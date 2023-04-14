@@ -29,7 +29,7 @@ git clone https://github.com/BaseMax/BookstoreGraphQLTS
 
 Install dependencies:
 ```bash
-cd graphql-api-bookstore
+cd BookstoreGraphQLTS
 npm install
 ```
 
