@@ -69,20 +69,24 @@ query {
     title
     author
     ISBN
-    genres
+    genre {
+      name
+    }
   }
 }
 ```
 
 - book: returns a book by its ID.
 ```graphql
-query($id: ID!) {
-  book(id: $id) {
+query {
+  book(id: id) {
     id
     title
     author
     ISBN
-    genres
+    genre {
+      name
+    }
   }
 }
 ```
@@ -125,8 +129,8 @@ query {
 
 - createBook: creates a new book.
 ```graphql
-mutation($input: BookInput!) {
-  createBook(input: $input) {
+mutation {
+  createBook(createBookInput) {
     id
     title
     author
@@ -139,8 +143,8 @@ mutation($input: BookInput!) {
 - updateBook: updates a book by its ID.
 
 ```graphql
-mutation($id: ID!, $input: BookInput!) {
-  updateBook(id: $id, input: $input) {
+mutation {
+  updateBook(updateBookInput) {
     id
     title
     author
@@ -153,8 +157,8 @@ mutation($id: ID!, $input: BookInput!) {
 - deleteBook: deletes a book by its ID.
 
 ```graphql
-mutation($id: ID!) {
-  deleteBook(id: $id) {
+mutation {
+  removeBook(id: id) {
     id
     title
     author
@@ -167,7 +171,7 @@ mutation($id: ID!) {
 - purchaseBook: adds a book to a user's list of purchased books.
 
 ```graphql
-mutation($userId: ID!, $bookId: ID!) {
+mutation {
   purchaseBook(userId: $userId, bookId: $bookId) {
     id
     name
@@ -179,12 +183,11 @@ mutation($userId: ID!, $bookId: ID!) {
 
 - createUser: creates a new user.
 ```graphql
-mutation($input: UserInput!) {
-  createUser(input: $input) {
+mutation() {
+  createUser(createUserInout) {
     id
     name
     email
-    books
   }
 }
 ```
@@ -192,8 +195,8 @@ mutation($input: UserInput!) {
 - updateUser: updates a user by their ID.
 
 ```graphql
-mutation($id: ID!, $input: UserInput!) {
-  updateUser(id: $id, input: $input) {
+mutation {
+  updateUser(updateUserInput) {
     id
     name
     email
@@ -205,7 +208,7 @@ mutation($id: ID!, $input: UserInput!) {
 - deleteUser: deletes a user by their ID.
 
 ```graphql
-mutation($id: ID!) {
+mutation() {
   deleteUser(id: $id) {
     id
     name
