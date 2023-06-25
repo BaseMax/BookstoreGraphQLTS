@@ -1,0 +1,86 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Genre {
+  id: Int!
+  name: String!
+  books: [Book!]
+}
+
+type Book {
+  id: Int!
+  title: String!
+  author: String!
+  ISBN: String!
+  genre: Genre
+}
+
+type User {
+  id: Int!
+  name: String!
+  email: String!
+  password: String
+  books: [Book!]
+}
+
+type Query {
+  books: [Book!]!
+  book(id: Int!): Book!
+  users: [User!]!
+  user(id: Int!): User!
+  genres: [Genre!]!
+  genre(id: Int!): Genre!
+}
+
+type Mutation {
+  createBook(createBookInput: CreateBookInput!): Book!
+  updateBook(updateBookInput: UpdateBookInput!): Book!
+  removeBook(id: Int!): Book!
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
+  purchaseBook(userId: Int!, bookId: Int!): User!
+  createGenre(createGenreInput: CreateGenreInput!): Genre!
+  updateGenre(updateGenreInput: UpdateGenreInput!): Genre!
+  removeGenre(id: Int!): Genre!
+}
+
+input CreateBookInput {
+  title: String!
+  author: String!
+  ISBN: String!
+  genreId: Float
+  genreName: String
+}
+
+input UpdateBookInput {
+  title: String
+  author: String
+  ISBN: String
+  genreId: Float
+  genreName: String
+  id: Int!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  name: String
+  email: String
+  password: String
+  id: Int!
+}
+
+input CreateGenreInput {
+  name: String!
+}
+
+input UpdateGenreInput {
+  name: String
+  id: Int!
+}
