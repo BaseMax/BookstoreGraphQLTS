@@ -9,6 +9,7 @@ import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { ExceptionFilter } from './common/filters/exception.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptors';
 import { GenreModule } from './modules/genre/genre.module';
+import { CacheModule } from './modules/cache/cache.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { GenreModule } from './modules/genre/genre.module';
       autoSchemaFile: join(process.cwd(), 'graphql/schema.gql'),
     }),
     PrimsaModule,
+    CacheModule,
     BookModule,
     UserModule,
     GenreModule,
