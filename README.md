@@ -45,6 +45,16 @@ npm run start
 
 Visit http://localhost:4000/graphql to interact with the API using the GraphQL Playground.
 
+## Testing
+
+To run the tests, use the following command:
+
+```shell
+npm run test:e2e
+```
+
+This will execute the test suite and provide the test results.
+
 ## Background
 
 You are tasked with building a GraphQL API for a bookstore that will allow users to browse books and manage their accounts. The API should be built using TypeScript and Apollo Server, and it should use Redis for caching and PostgreSQL as the database. Docker should be used to automatically install PostgreSQL and the GraphQL tools.
